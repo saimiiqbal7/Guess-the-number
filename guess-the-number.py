@@ -3,26 +3,23 @@
 import random
 
 def guess(x):
+    num = random.randint(1, x)
+    attempts = 3
+    print(f"Guess the number between 1 and {x}. You have {attempts} tries.")
 
-    num = random.randint(1,x)
-    
-    for i in range(4):
+    for i in range(attempts):
+        your_num = int(input("Enter a number: "))
 
-
-        your_num = int(input("Enter a number"))
-
-        if i == 3:
-            print("You lost")
-            break
         if num == your_num:
-            print("Yay! You guessed the number")
+            print("Yay! You guessed the number!")
             break
         elif num > your_num:
-            print("Try a higher number")
+            print("Try a higher number.")
         else:
-            print("Try a lower number")
-    
-    print("number was ", str(num))
-
+            print("Try a lower number.")
+        
+        if i == attempts - 1:
+            print("You lost. The number was", num)
 
 guess(10)
+
