@@ -5,9 +5,11 @@ import random
 def guess(x):
     num = random.randint(1, x)
     attempts = 3
-    print(f"Guess the number between 1 and {x}. You have {attempts} tries.")
+    
 
     for i in range(attempts):
+
+        print(f"Guess the number between 1 and {x}. You have {attempts-i} tries.")
         your_num = int(input("Enter a number: "))
 
         if num == your_num:
